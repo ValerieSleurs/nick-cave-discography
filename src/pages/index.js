@@ -1,12 +1,65 @@
 import * as React from "react"
-import Layout from "../components/layout";
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Layout from "../components/layout"
 
-const IndexPage = () => {
+const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
+  console.log(homePageFields);
+  const image = getImage(homePageFields.picture.localFile);
+
   return (
     <Layout pageTitle="Nick Cave and the Bad Seeds">
-      <p>Homepage</p>
+      <div>
+        <h2>{homePageFields.title}</h2>
+        <div 
+          dangerouslySetInnerHTML={{
+          __html: homePageFields.description,
+        }}
+        />
+      </div>
+      <div>
+        <GatsbyImage image={image} alt={homePageFields.picture.altText}/>
+      </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    wpPage(slug: {eq: "home-page"}) {
+      homePageFields {
+        title
+        description
+        picture {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+        }
+        featuredProducts {
+          ... on WpAlbum {
+            id
+            slug
+            albumMeta {
+              albumTitle
+              releaseYear
+              albumType
+              albumCover {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
