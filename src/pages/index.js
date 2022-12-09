@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
+import Album from "../components/album"
 
 const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
   console.log(homePageFields);
@@ -19,6 +20,13 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
       </div>
       <div>
         <GatsbyImage image={image} alt={homePageFields.picture.altText}/>
+      </div>
+      <div>
+        {homePageFields.featuredProducts.map(album => {
+          return (
+            <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
+          );
+        })}
       </div>
     </Layout>
   )
