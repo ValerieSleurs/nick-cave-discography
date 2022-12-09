@@ -1,17 +1,29 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
+import Album from "../../components/album"
 
-const AlbumsPage = ({ data: { allWpAlbum: { edges } } }) => {
+const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: {albumsPageFields} } }) => {
+  console.log(edges, albumsPageFields)
+  const image = getImage(albumsPageFields.picture.localFile)
+
   return (
     <Layout>
-      {edges.map((item) => {
-        const album = item.node.albumMeta;
-        const slug = item.node.slug;
-        return (
-          <Link to={`/albums/${slug}`}>
-            <p key={item.node.id}>{album.albumTitle}</p>
-          </Link>
+       <div>
+        <h2>{albumsPageFields.title}</h2>
+        <div 
+          dangerouslySetInnerHTML={{
+          __html: albumsPageFields.description,
+        }}
+        />
+      </div>
+      <div>
+        <GatsbyImage image={image} alt={albumsPageFields.picture.altText}/>
+      </div>
+      {edges.map(({node: album}) => {
+        return (          
+          <Album slug={album.slug} key={album.id} album={album} />
         );
       })}
     </Layout>
@@ -20,13 +32,35 @@ const AlbumsPage = ({ data: { allWpAlbum: { edges } } }) => {
 
 export const query = graphql`
   query {
+    wpPage(slug: {eq: "albums"}) {
+      albumsPageFields {
+        title
+        description
+        picture {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+        }
+      }
+    }
     allWpAlbum {
       edges {
         node {
           albumMeta {
-            artist
             albumTitle
             releaseYear
+            albumType
+            albumCover {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED)
+                }
+              }
+            }
           }
           id
           slug
