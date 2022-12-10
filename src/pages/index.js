@@ -10,24 +10,29 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
 
   return (
     <Layout pageTitle="Nick Cave and the Bad Seeds">
-      <div>
-        <h2>{homePageFields.title}</h2>
-        <div 
+      <section>
+        <div>
+          <h2>{homePageFields.title}</h2>
+          <GatsbyImage image={image} alt={homePageFields.picture.altText} />
+        </div>
+      </section>
+      <section>
+        <div
           dangerouslySetInnerHTML={{
-          __html: homePageFields.description,
-        }}
+            __html: homePageFields.description,
+          }}
         />
-      </div>
-      <div>
-        <GatsbyImage image={image} alt={homePageFields.picture.altText}/>
-      </div>
-      <div>
-        {homePageFields.featuredProducts.map(album => {
-          return (
-            <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
-          );
-        })}
-      </div>
+      </section>
+      <section>
+        <h2>Highlights</h2>
+        <div>
+          {homePageFields.featuredProducts.map(album => {
+            return (
+              <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
+            );
+          })}
+        </div>
+      </section>
     </Layout>
   )
 }
