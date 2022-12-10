@@ -1,4 +1,22 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font: 112.5%/1.45em sans-serif, georgia, serif;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    background-color: rgb(255, 253, 250);
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    font-family: sans-serif, georgia, serif;
+    font-weight: normal;
+    word-wrap: break-word;
+    font-kerning: normal;
+}
+
 .container {
-    width: 100%;
-    font-family: sans-serif;
+    margin: 0rem 4rem;
+    border: red solid 1px;
 }

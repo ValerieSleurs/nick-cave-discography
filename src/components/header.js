@@ -1,16 +1,24 @@
 import * as React from "react"
 import { Link } from 'gatsby'
+import {
+  navContainer,
+  navHeader,
+  navItems,
+  navItem,
+  navItemLink
+} from "./header.module.css"
+
 
 const Header = () => {
   return (    
-      <nav>
-        <header>"Nick Cave and the Bad Seeds logo"</header>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+      <nav className={navContainer}>
+        <header className={navHeader}><Link to="/">Nick Cave Logo</Link></header>
+        <ul className={navItems}>
+          <li className={navItem}>
+            <Link className={navItemLink} to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/albums">Albums</Link>
+          <li className={navItem}>
+            <Link className={navItemLink} to="/albums">Albums</Link>
           </li>
         </ul>
       </nav>
