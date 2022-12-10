@@ -3,6 +3,11 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Album from "../components/album"
+import {
+  header,
+  headerTitle,
+  headerImage
+} from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
   console.log(homePageFields);
@@ -10,10 +15,10 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
 
   return (
     <Layout pageTitle="Nick Cave and the Bad Seeds">
-      <section>
+      <section className={header}>
         <div>
-          <h2>{homePageFields.title}</h2>
-          <GatsbyImage image={image} alt={homePageFields.picture.altText} />
+          <GatsbyImage className={headerImage} image={image} alt={homePageFields.picture.altText} />
+          <h2 className={headerTitle}>{homePageFields.title}</h2>          
         </div>
       </section>
       <section>
