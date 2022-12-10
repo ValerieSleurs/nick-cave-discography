@@ -5,6 +5,7 @@ import Layout from '../../components/layout'
 
 const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: producers } } } }) => {
   const image = getImage(album.albumCover.localFile);
+  console.log(album);
 
   return (
     <Layout>
@@ -29,7 +30,7 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
           __html: album.tracklisting,
         }}
         />            
-        <p>Video: {album.video}</p>
+        <iframe width="560" height="315" src={album.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
       </div>
       <div>
         <GatsbyImage image={image} alt={album.albumCover.altText} />
