@@ -4,13 +4,18 @@ import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Album from "../components/album"
 import {
+  homepageContainer,
   header,
   headerTitle,
   headerImage,
   bioContainer,
   bioTitle,
   bioImage,
-  bioText
+  bioText,
+  highlightsContainer,
+  highlightsTile,
+  highlightsTitle,
+  albumTile
 } from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
@@ -18,7 +23,7 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
   const image = getImage(homePageFields.picture.localFile);
 
   return (
-    <Layout pageTitle="Nick Cave and the Bad Seeds">
+    <Layout className={homepageContainer} pageTitle="Nick Cave and the Bad Seeds">
       <section className={header}>
         <div>
           <GatsbyImage className={headerImage} image={image} alt={homePageFields.picture.altText} />
@@ -43,11 +48,11 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
           }}
         />
       </section>
-      <section>
-        <div>
-          <h2>Highlights</h2>
+      <section className={highlightsContainer}>
+        <div className={highlightsTile}>
+          <h2 className={highlightsTitle}>Highlights</h2>
         </div>
-        <div>
+        <div className={albumTile}>
           {homePageFields.featuredProducts.map(album => {
             return (
               <Album slug={`albums/${album.slug}`} key={album.id} album={album} />

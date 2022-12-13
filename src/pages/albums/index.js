@@ -3,29 +3,31 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import Album from "../../components/album"
+import {
+  albumTile
+} from "../../page.module.css"
 
-const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: {albumsPageFields} } }) => {
+const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields } } }) => {
   console.log(edges, albumsPageFields)
   const image = getImage(albumsPageFields.picture.localFile)
 
   return (
     <Layout>
-       <div>
+      <div>
         <h2>{albumsPageFields.title}</h2>
-        <div 
+        <div
           dangerouslySetInnerHTML={{
-          __html: albumsPageFields.description,
-        }}
+            __html: albumsPageFields.description,
+          }}
         />
       </div>
-      <div>
-        <GatsbyImage image={image} alt={albumsPageFields.picture.altText}/>
+      <div className={albumTile}>
+        {edges.map(({ node: album }) => {
+          return (
+            <Album slug={album.slug} key={album.id} album={album} />
+          );
+        })}
       </div>
-      {edges.map(({node: album}) => {
-        return (          
-          <Album slug={album.slug} key={album.id} album={album} />
-        );
-      })}
     </Layout>
   );
 }
