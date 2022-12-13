@@ -1,12 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Album from "../components/album"
 import {
   header,
   headerTitle,
-  headerImage
+  headerImage,
+  bioContainer,
+  bioTitle,
+  bioImage,
+  bioText
 } from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
@@ -18,18 +22,31 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
       <section className={header}>
         <div>
           <GatsbyImage className={headerImage} image={image} alt={homePageFields.picture.altText} />
-          <h2 className={headerTitle}>{homePageFields.title}</h2>          
+          <h2 className={headerTitle}>{homePageFields.title}</h2>
         </div>
       </section>
-      <section>
-        <div
+      <section className={bioContainer}>
+        <div className={bioTitle}>
+          <h2>Established in 1983</h2>
+          <h3>Melbourne, Australia</h3>
+        </div>
+        <div className={bioImage}>
+          <StaticImage
+            alt="Nick Cave and the Bad Seeds"
+            src="../images/TheBadSeeds.jpeg"
+          />
+        </div>
+        <div className={bioText}></div>
+        <div 
           dangerouslySetInnerHTML={{
             __html: homePageFields.description,
           }}
         />
       </section>
       <section>
-        <h2>Highlights</h2>
+        <div>
+          <h2>Highlights</h2>
+        </div>
         <div>
           {homePageFields.featuredProducts.map(album => {
             return (
