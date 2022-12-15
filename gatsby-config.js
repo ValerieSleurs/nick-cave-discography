@@ -15,5 +15,14 @@ module.exports = {
         url: "http://nick-cave-discography.local/graphql",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Bebas Neue`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 };

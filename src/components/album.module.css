@@ -35,9 +35,10 @@
 }
 
 .album-details h3 {
-    font-size: 30pt;
+    font-size: 34pt;
     margin: 0;
     font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.2rem;
 }
 
 .album-details h4 {

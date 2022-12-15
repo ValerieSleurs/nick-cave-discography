@@ -72,10 +72,12 @@
 
 .highlights-title {
     position: absolute;
-    transform: translate(-7%, -90%);
+    transform: translate(-2%, -90%);
     text-transform: uppercase;
-    font-size: 30pt;
+    font-size: 50pt;
     color: white;
+    letter-spacing: 0.2rem;
+    font-family: 'Bebas Neue', cursive;
 }
 
 /* Albums Page CSS */
