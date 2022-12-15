@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import Album from "../../components/album"
 import {
+  albumsContainer,
   albumTile
 } from "../../page.module.css"
 
@@ -13,21 +14,27 @@ const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields 
 
   return (
     <Layout>
-      <div>
-        <h2>{albumsPageFields.title}</h2>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: albumsPageFields.description,
-          }}
-        />
-      </div>
-      <div className={albumTile}>
-        {edges.map(({ node: album }) => {
-          return (
-            <Album slug={album.slug} key={album.id} album={album} />
-          );
-        })}
-      </div>
+      <section>
+        <div>
+          <h2>{albumsPageFields.title}</h2>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: albumsPageFields.description,
+            }}
+          />
+        </div>
+      </section>
+      <section className={albumsContainer}>
+        <div>
+        <div className={albumTile}>
+          {edges.map(({ node: album }) => {
+            return (
+              <Album slug={album.slug} key={album.id} album={album} />
+            );
+          })}
+        </div>
+        </div>
+      </section>
     </Layout>
   );
 }

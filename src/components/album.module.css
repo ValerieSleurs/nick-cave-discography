@@ -30,12 +30,14 @@
 .album-details h2 {
     font-size: 16pt;
     margin: 0;
-    padding-top: 6rem;
+    padding: 6rem 1.5rem 0 1.5rem; 
+
 }
 
 .album-details h3 {
     font-size: 30pt;
     margin: 0;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .album-details h4 {

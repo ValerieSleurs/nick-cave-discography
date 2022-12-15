@@ -4,7 +4,6 @@ import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Album from "../components/album"
 import {
-  homepageContainer,
   header,
   headerTitle,
   headerImage,
@@ -12,10 +11,10 @@ import {
   bioTitle,
   bioImage,
   bioText,
+  featuredProducts,
   highlightsContainer,
   highlightsTile,
-  highlightsTitle,
-  albumTile
+  highlightsTitle
 } from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
@@ -23,7 +22,7 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
   const image = getImage(homePageFields.picture.localFile);
 
   return (
-    <Layout className={homepageContainer} pageTitle="Nick Cave and the Bad Seeds">
+    <Layout pageTitle="Nick Cave and the Bad Seeds">
       <section className={header}>
         <div>
           <GatsbyImage className={headerImage} image={image} alt={homePageFields.picture.altText} />
@@ -42,17 +41,17 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
           />
         </div>
         <div className={bioText}></div>
-        <div 
+        <div
           dangerouslySetInnerHTML={{
             __html: homePageFields.description,
           }}
         />
       </section>
-      <section className={highlightsContainer}>
-        <div className={highlightsTile}>
-          <h2 className={highlightsTitle}>Highlights</h2>
-        </div>
-        <div className={albumTile}>
+      <section className={featuredProducts}>
+        <div className={highlightsContainer}>
+          <div className={highlightsTile}>
+            <h2 className={highlightsTitle}>Highlights</h2>
+          </div>
           {homePageFields.featuredProducts.map(album => {
             return (
               <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
