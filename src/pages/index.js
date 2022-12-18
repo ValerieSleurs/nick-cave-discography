@@ -1,43 +1,43 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Album from "../components/album"
 import {
   header,
   headerTitle,
-  headerImage,
+  headerPicture,
   bioContainer,
   bioTitle,
-  bioImage,
+  bioPicture,
   bioText,
   featuredProducts,
   highlightsContainer,
   highlightsTile,
-  highlightsTitle
+  highlightsTitle,
+  contactContainer
 } from "../page.module.css"
 
-const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
+const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
   console.log(homePageFields);
-  const image = getImage(homePageFields.picture.localFile);
+  const heroImage = getImage(homePageFields.picture.localFile);
+  const bioImage = getImage(homePageFields.bioImage.localFile);
 
   return (
     <Layout pageTitle="Nick Cave and the Bad Seeds">
       <section className={header}>
         <div>
-          <GatsbyImage className={headerImage} image={image} alt={homePageFields.picture.altText} />
+          <GatsbyImage className={headerPicture} image={heroImage} alt={homePageFields.picture.altText} />
           <h2 className={headerTitle}>{homePageFields.title}</h2>
         </div>
       </section>
       <section className={bioContainer}>
         <div className={bioTitle}>
-          <h2>Established in 1983</h2>
-          <h3>Melbourne, Australia</h3>
+          <h2>{homePageFields.bioTitle}</h2>
+          <h3>{homePageFields.bioSubtitle}</h3>
         </div>
-        <div className={bioImage}>
-          <StaticImage
-            alt="Nick Cave and the Bad Seeds"
-            src="../images/TheBadSeeds.jpeg"
+        <div className={bioPicture}>
+          <GatsbyImage image={bioImage} alt={homePageFields.bioImage.altText}
           />
         </div>
         <div className={bioText}></div>
@@ -57,6 +57,11 @@ const IndexPage = ({ data: { wpPage: { homePageFields } } }) => {
               <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
             );
           })}
+        </div>
+      </section>
+      <section className={contactContainer}>
+        <div>
+          <h2>{contactFields.contactTitle}</h2>
         </div>
       </section>
     </Layout>
@@ -93,6 +98,35 @@ export const query = graphql`
                   }
                 }
               }
+            }
+          }
+        }
+        bioTitle
+        bioSubtitle
+        bioImage {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+        }
+        callToAction {
+          title
+          url
+        }
+      }
+      contactFields {
+        contactTitle
+        website
+        instagram
+        facebook
+        youtube
+        contactPicture {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }

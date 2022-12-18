@@ -55,7 +55,7 @@ export const query = graphql`
         }
       }
     }
-    allWpAlbum {
+    allWpAlbum(sort: {fields: albumMeta___releaseYear}) {
       edges {
         node {
           albumMeta {
