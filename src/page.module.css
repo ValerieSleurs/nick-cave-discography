@@ -1,13 +1,13 @@
 /* Index Page CSS */
 
-.header {
+.header-container {
     position: relative;
-    text-align: center;
-    color: rgb(255, 253, 250);
+    text-align: center;    
 }
 
 .header-title {
     width: 60%;
+    max-width: 1000px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,10 +17,11 @@
     line-height: 3.5rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
+    color: rgb(255, 253, 250);
 }
 
 .header-picture {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -28,21 +29,55 @@
     border:purple solid 1px;
     display: flex;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: auto;
-    padding: 8rem 0;
+    padding: 18rem 0 22rem 0;
 }
 
-.bio-title {
+.bio-titles {
     border: blue solid 1px;
+    width: 20%;  
+    padding-top: 18rem;
+    margin-right: 4rem;    
+    letter-spacing: 0.1rem;
+}
+
+.bio-titles h2 {
+    text-transform: uppercase;
+    font-size: 26pt;       
+}
+
+.bio-titles h3 {
+    font-size: 20pt;
+    letter-spacing: 0.1rem;
+    padding-top: 1rem; 
 }
 
 .bio-picture {
     border: blue solid 1px;
+    width: 32%;    
+    margin-right: 4rem;
 }
 
 .bio-text {
     border: blue solid 1px;
+    width: 40%;
+    font-size: 15pt;
+    line-height: 2rem;
+    padding-right: 3rem;
+    padding-top: 9rem;
+}
+
+.button {
+    margin-top: 4rem;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+    border: solid 1px black;
+    padding: 14px 24px;
+    margin-top: 2rem;
 }
 
 .featured-products {

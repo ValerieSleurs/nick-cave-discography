@@ -4,13 +4,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Album from "../components/album"
 import {
-  header,
+  headerContainer,
   headerTitle,
   headerPicture,
   bioContainer,
-  bioTitle,
+  bioTitles,
   bioPicture,
   bioText,
+  button,
   featuredProducts,
   highlightsContainer,
   highlightsTile,
@@ -25,14 +26,15 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
 
   return (
     <Layout pageTitle="Nick Cave and the Bad Seeds">
-      <section className={header}>
+      <section className={headerContainer}>
         <div>
           <GatsbyImage className={headerPicture} image={heroImage} alt={homePageFields.picture.altText} />
           <h2 className={headerTitle}>{homePageFields.title}</h2>
         </div>
       </section>
+
       <section className={bioContainer}>
-        <div className={bioTitle}>
+        <div className={bioTitles}>
           <h2>{homePageFields.bioTitle}</h2>
           <h3>{homePageFields.bioSubtitle}</h3>
         </div>
@@ -40,13 +42,20 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
           <GatsbyImage image={bioImage} alt={homePageFields.bioImage.altText}
           />
         </div>
-        <div className={bioText}></div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: homePageFields.description,
-          }}
-        />
+        <div className={bioText}>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: homePageFields.description,
+            }}
+          />
+          <div className={button}>
+            <a target="__blank" href={homePageFields.callToAction.url}>
+              {homePageFields.callToAction.title}
+            </a>
+          </div>
+        </div>
       </section>
+
       <section className={featuredProducts}>
         <div className={highlightsContainer}>
           <div className={highlightsTile}>
@@ -59,6 +68,7 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
           })}
         </div>
       </section>
+
       <section className={contactContainer}>
         <div>
           <h2>{contactFields.contactTitle}</h2>
