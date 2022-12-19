@@ -124,6 +124,32 @@
 
 /* Albums Page CSS */
 
+.text-container {
+    display: flex;
+    max-width: 1220px;
+    margin: auto;
+    padding: 8rem 0 8rem 0;
+    border: solid green 1px;
+}
+
+.text-container h2 {
+    /* border: purple solid 1px; */
+    width: 35%;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50pt;
+    line-height: 4.2rem;
+    letter-spacing: 0.2rem;
+}
+
+.text {
+    /* border: purple solid 1px; */
+    width: 65%;
+    font-size: 15pt;
+    line-height: 2rem;
+    margin-top: 3.6rem;
+    margin-left: 3rem;
+}
+
 .albums-container {
     display: flex;
     justify-content: center;
