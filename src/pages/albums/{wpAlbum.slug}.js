@@ -3,7 +3,12 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import {
+  infoContainer,
+  infoText,
+  taxonomy,
   albumCover,
+  videoContainer,
+  videoTitle,
   iframe
 } from "../../page.module.css"
 
@@ -13,38 +18,37 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
 
   return (
     <Layout>
-      <section>
-        <div>         
-          <h2>{album.albumTitle} ({album.releaseYear})</h2>
-          <div>
-            <p>Produced by:</p>
-            {producers.map((producer, i) => (
-              <span key={i}>{producer.name} {i + 1 < producers.length && "- "}</span>
-            ))}
+      <section className={infoContainer}>
+        <div className={infoText}>
+          <h3>{album.albumTitle} ({album.releaseYear})</h3>
+          <div className={taxonomy}>
+            <div>Produced by:
+              {producers.map((producer, i) => (
+                <span key={i}> {producer.name} {i + 1 < producers.length && "- "}</span>
+              ))}
+            </div>
           </div>
-          <p>Artist: {album.artist}</p>
+          <p>{album.albumType} | Performed by {album.artist} | Released by {album.recordLabel}</p>
           <div
             dangerouslySetInnerHTML={{
               __html: album.description,
             }}
           />
-          <p>Album type: {album.albumType}</p>
-          <p>Record label: {album.recordLabel}</p>
-          <p>Length: {album.length}</p>
           <div
             dangerouslySetInnerHTML={{
               __html: album.tracklisting,
             }}
           />
+          <p>Length: {album.length}</p>
         </div>
         <div>
           <GatsbyImage className={albumCover} image={image} alt={album.albumCover.altText} />
         </div>
       </section>
 
-      <section>
+      <section className={videoContainer}>
         <h2>Discover {album.videoTitle}</h2>
-        <iframe className={iframe} width="560" height="315" src={album.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        <iframe className={iframe} src={album.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
       </section>
     </Layout >
   )

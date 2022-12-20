@@ -124,21 +124,21 @@
 
 /* Albums Page CSS */
 
-.text-container {
+.info-container {
     display: flex;
     max-width: 1220px;
     margin: auto;
-    padding: 8rem 0 8rem 0;
-    border: solid green 1px;
+    padding: 8rem 0 7rem 0;
+    /* border: solid green 1px; */
 }
 
-.text-container h2 {
+.info-container h2 {
     /* border: purple solid 1px; */
     width: 35%;
     font-family: 'Bebas Neue', cursive;
     font-size: 50pt;
     line-height: 4.2rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 }
 
 .text {
@@ -166,13 +166,47 @@
 
 /* Album Template Page CSS */
 
+.info-container h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30pt;
+    letter-spacing: 0.1rem;
+    padding-top: 1rem;
+}
+
+.info-text {
+    /* border: purple solid 1px; */
+    font-size: 12pt;
+    line-height: 2rem;
+    margin-right: 4rem;
+}
+
+.taxonomy {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
 .album-cover {
     width: 350px;
     height: 350px;
     margin-top: 3rem;
 }
 
+.video-container {
+    max-width: 1220px;  
+    margin: auto;
+    padding: 0rem 0 3rem 0;
+    /* border: solid green 1px; */
+}
+
+.video-container h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30pt;
+    letter-spacing: 0.1rem;
+}
+
 .iframe {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    /* Ratio 16:9 */
+    margin-top: 1rem;
+    width: 1220px;
+    height: 686px;
 }

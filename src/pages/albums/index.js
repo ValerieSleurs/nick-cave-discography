@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import Album from "../../components/album"
 import {
-  textContainer,
+  infoContainer,
   text,
   albumsContainer,
   albumTile
@@ -17,7 +17,7 @@ const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields 
   return (
     <Layout>
       <section>
-        <div className={textContainer}>
+        <div className={infoContainer}>
           <h2>{albumsPageFields.title}</h2>
             <div      
               className={text}       
