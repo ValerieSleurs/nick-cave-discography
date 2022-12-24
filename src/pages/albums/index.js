@@ -16,16 +16,14 @@ const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields 
 
   return (
     <Layout>
-      <section>
-        <div className={infoContainer}>
-          <h2>{albumsPageFields.title}</h2>
-            <div      
-              className={text}       
-              dangerouslySetInnerHTML={{
-                __html: albumsPageFields.description,
-              }}
-            />
-          </div>
+      <section className={infoContainer}>
+        <h2>{albumsPageFields.title}</h2>
+        <div
+          className={text}
+          dangerouslySetInnerHTML={{
+            __html: albumsPageFields.description,
+          }}
+        />
       </section>
 
       <section className={albumsContainer}>

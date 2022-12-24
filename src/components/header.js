@@ -12,13 +12,13 @@ import {
 const Header = () => {
   return (    
       <nav className={navContainer}>
-        <header className={navHeader}><Link to="/">Nick Cave Logo</Link></header>
+        <header className={navHeader}><Link to="/">Nick Cave and the Bad Seeds</Link></header>
         <ul className={navItems}>
           <li className={navItem}>
             <Link className={navItemLink} to="/">Home</Link>
           </li>
           <li className={navItem}>
-            <Link className={navItemLink} to="/albums">Albums</Link>
+            <Link className={navItemLink} to="/albums">Discography</Link>
           </li>
         </ul>
       </nav>

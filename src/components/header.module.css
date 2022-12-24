@@ -1,9 +1,9 @@
 .nav-container {
-    color: black;
     display: flex;
+    max-width: 85vw;
     border: red solid 1px;
-    margin: 0;
-    padding-top: 3rem;
+    margin: auto;
+    padding-top: 2rem;
     padding-bottom: 2rem;
     font-family: sans-serif;
 }

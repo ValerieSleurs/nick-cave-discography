@@ -27,10 +27,8 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
   return (
     <Layout pageTitle="Nick Cave and the Bad Seeds">
       <section className={headerContainer}>
-        <div>
-          <GatsbyImage className={headerPicture} image={heroImage} alt={homePageFields.picture.altText} />
-          <h2 className={headerTitle}>{homePageFields.title}</h2>
-        </div>
+        <GatsbyImage className={headerPicture} image={heroImage} alt={homePageFields.picture.altText} />
+        <h2 className={headerTitle}>{homePageFields.title}</h2>
       </section>
 
       <section className={bioContainer}>
@@ -70,9 +68,7 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
       </section>
 
       <section className={contactContainer}>
-        <div>
-          <h2>{contactFields.contactTitle}</h2>
-        </div>
+        <h2>{contactFields.contactTitle}</h2>
       </section>
     </Layout>
   )

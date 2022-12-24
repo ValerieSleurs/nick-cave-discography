@@ -8,7 +8,6 @@ import {
   taxonomy,
   albumCover,
   videoContainer,
-  videoTitle,
   iframe
 } from "../../page.module.css"
 
