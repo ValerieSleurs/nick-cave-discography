@@ -16,7 +16,10 @@ import {
   highlightsContainer,
   highlightsTile,
   highlightsTitle,
-  contactContainer
+  contactContainer,
+  form,
+  personalData,
+  message
 } from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
@@ -69,6 +72,21 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
 
       <section className={contactContainer}>
         <h2>{contactFields.contactTitle}</h2>
+        <form className={form} name="contact" method="POST" data-netlify="true">
+          <div className={personalData}>
+            <input type="text" name="firstName" placeholder="First Name" required={true} />
+            <input type="text" name="lastName" placeholder="Last Name" required={true} />
+            <input type="email" name="email" placeholder="Email" required={true} />
+          </div>
+          <div className={message}>
+            <input type="text" name="subject" placeholder="Subject" required={true} />
+            <textarea name="message" placeholder="Message" required={true}></textarea>
+            <input type="hidden" name="form-name" value="contact" />
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
       </section>
     </Layout>
   )
