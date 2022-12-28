@@ -13,21 +13,21 @@ import {
 
 const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: producers } } } }) => {
   const image = getImage(album.albumCover.localFile);
-  console.log(album);
 
   return (
-    <Layout>
+    <Layout pageTitle="Album Details">
       <section className={infoContainer}>
-        <div className={infoText}>
+        <article className={infoText}>
           <h3>{album.albumTitle} ({album.releaseYear})</h3>
-          <div className={taxonomy}>
-            <div>Produced by:
-              {producers.map((producer, i) => (
-                <span key={i}> {producer.name} {i + 1 < producers.length && "- "}</span>
-              ))}
-            </div>
+          <div className={taxonomy}>Produced by
+            {producers.map((producer, i) => (
+              <span key={i}> {producer.name} {i + 1 < producers.length && "& "}</span>
+            ))}
           </div>
-          <p>{album.albumType} | Performed by {album.artist} | Released by {album.recordLabel}</p>
+          {album.artist && (
+            <p>Performed by {album.artist}</p>
+          )}
+          <p>{album.albumType} released by {album.recordLabel}</p>
           <div
             dangerouslySetInnerHTML={{
               __html: album.description,
@@ -39,10 +39,8 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
             }}
           />
           <p>Length: {album.length}</p>
-        </div>
-        <div>
-          <GatsbyImage className={albumCover} image={image} alt={album.albumCover.altText} />
-        </div>
+        </article>
+        <GatsbyImage className={albumCover} image={image} alt={album.albumCover.altText} />
       </section>
 
       <section className={videoContainer}>

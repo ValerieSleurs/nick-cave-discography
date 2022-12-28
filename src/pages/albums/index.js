@@ -11,11 +11,10 @@ import {
 } from "../../page.module.css"
 
 const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields } } }) => {
-  console.log(edges, albumsPageFields)
   const image = getImage(albumsPageFields.picture.localFile)
 
   return (
-    <Layout>
+    <Layout pageTitle="Albums of Nick Cave and the Bad Seeds">
       <section className={infoContainer}>
         <h2>{albumsPageFields.title}</h2>
         <div

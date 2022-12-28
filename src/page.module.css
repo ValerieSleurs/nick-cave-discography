@@ -71,10 +71,8 @@
 }
 
 .button {
-    margin-top: 3rem;
-}
-
-.button a {
+    display: block;
+    width: 9rem;
     text-decoration: none;
     color: black;
     font-size: 13pt;
@@ -84,21 +82,18 @@
     margin-top: 2rem;
 }
 
-.button a:hover {
+.button:hover {
     color: white;
     background-color: black;
 }
 
-.featured-products {
-    display: flex;
-    justify-content: center;
-}
-
 .highlights-container {
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
     border: green solid 1px;
     justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
     gap: 0.3rem;
     max-width: 1220px;
 }
@@ -259,18 +254,19 @@ input, select, textarea{
 
 /* Album Template Page CSS */
 
-.info-container h3 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 30pt;
-    letter-spacing: 0.1rem;
-    padding-top: 1rem;
-}
-
 .info-text {
     /* border: purple solid 1px; */
     font-size: 13pt;
     line-height: 1.7rem;
-    margin-right: 5rem;
+    margin-right: 150px;
+    width: 720px;
+}
+
+.info-text h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30pt;
+    letter-spacing: 0.1rem;
+    padding-top: 1rem;
 }
 
 .taxonomy {

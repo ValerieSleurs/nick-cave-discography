@@ -12,7 +12,6 @@ import {
   bioPicture,
   bioText,
   button,
-  featuredProducts,
   highlightsContainer,
   highlightsTile,
   highlightsTitle,
@@ -23,7 +22,6 @@ import {
 } from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
-  console.log(homePageFields);
   const heroImage = getImage(homePageFields.picture.localFile);
   const bioImage = getImage(homePageFields.bioImage.localFile);
 
@@ -37,11 +35,12 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
       <section className={bioContainer}>
         <div className={bioTitles}>
           <h2>{homePageFields.bioTitle}</h2>
-          <h3>{homePageFields.bioSubtitle}</h3>
+          {homePageFields.bioSubtitle && (
+            <h3>{homePageFields.bioSubtitle}</h3>
+          )}
         </div>
         <div className={bioPicture}>
-          <GatsbyImage image={bioImage} alt={homePageFields.bioImage.altText}
-          />
+          <GatsbyImage image={bioImage} alt={homePageFields.bioImage.altText} />
         </div>
         <div className={bioText}>
           <div
@@ -49,16 +48,13 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
               __html: homePageFields.description,
             }}
           />
-          <div className={button}>
-            <a target="__blank" href={homePageFields.callToAction.url}>
-              {homePageFields.callToAction.title}
-            </a>
-          </div>
+          <a className={button} href={homePageFields.callToAction.url}>
+            {homePageFields.callToAction.title}
+          </a>
         </div>
       </section>
 
-      <section className={featuredProducts}>
-        <div className={highlightsContainer}>
+      <section className={highlightsContainer}>
           <div className={highlightsTile}>
             <h2 className={highlightsTitle}>Highlights</h2>
           </div>
@@ -67,11 +63,10 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
               <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
             );
           })}
-        </div>
       </section>
 
       <section className={contactContainer}>
-        <h2>{contactFields.contactTitle}</h2>
+        {contactFields.contactTitle && <h2>{contactFields.contactTitle}</h2>}
         <form className={form} name="contact" method="POST" data-netlify="true">
           <div className={personalData}>
             <input type="text" name="firstName" placeholder="First Name" required={true} />
@@ -145,15 +140,7 @@ export const query = graphql`
         website
         instagram
         facebook
-        youtube
-        contactPicture {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-          }
-        }
+        youtube       
       }
     }
   }
