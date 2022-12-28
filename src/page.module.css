@@ -78,7 +78,7 @@
     font-size: 13pt;
     border: solid 1px black;
     border-radius: 2px;
-    padding: 12px 20px;
+    padding: 8px 18px;
     margin-top: 2rem;
 }
 
@@ -110,7 +110,7 @@
 
 .highlights-title {
     position: absolute;
-    transform: translate(-2%, -90%);
+    transform: translate(-2%, -86%);
     text-transform: uppercase;
     font-size: 50pt;
     color: white;
@@ -216,7 +216,7 @@ input, select, textarea{
     display: flex;
     max-width: 1220px;
     margin: auto;
-    padding: 8rem 0 7rem 0;
+    padding: 8rem 0 2rem 0;
     /* border: solid green 1px; */
 }
 
@@ -243,6 +243,7 @@ input, select, textarea{
     justify-content: center;
     border: red solid 1px;
     padding-bottom: 3rem;
+    margin-top: 5rem;
 }
 
 .album-tile {
@@ -262,10 +263,11 @@ input, select, textarea{
     width: 720px;
 }
 
-.info-text h3 {
+.info-text h3,
+.tracklisting-container h3 {
     font-family: 'Bebas Neue', cursive;
     font-size: 30pt;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.15rem;
     padding-top: 1rem;
 }
 
@@ -280,6 +282,23 @@ input, select, textarea{
     margin-top: 3rem;
 }
 
+.tracklisting-container {
+    max-width: 1220px;
+    margin: auto;
+    padding-bottom: 4rem;
+}
+
+.tracklisting {
+    width: 1180px;
+    font-size: 14pt;
+    line-height: 1.7rem;
+}
+
+.tracklisting-container p {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
 .video-container {
     max-width: 1220px;  
     margin: auto;
@@ -290,7 +309,7 @@ input, select, textarea{
 .video-container h2 {
     font-family: 'Bebas Neue', cursive;
     font-size: 30pt;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.15rem;
 }
 
 .iframe {

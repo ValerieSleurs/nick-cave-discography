@@ -7,6 +7,8 @@ import {
   infoText,
   taxonomy,
   albumCover,
+  tracklistingContainer,
+  tracklisting,
   videoContainer,
   iframe
 } from "../../page.module.css"
@@ -33,14 +35,19 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
               __html: album.description,
             }}
           />
-          <div
-            dangerouslySetInnerHTML={{
-              __html: album.tracklisting,
-            }}
-          />
-          <p>Length: {album.length}</p>
         </article>
         <GatsbyImage className={albumCover} image={image} alt={album.albumCover.altText} />
+      </section>
+
+      <section className={tracklistingContainer}>
+        <h3>Tracklisting</h3>
+        <div 
+          className={tracklisting}
+          dangerouslySetInnerHTML={{
+            __html: album.tracklisting,
+          }}
+        />
+        <p>Album length: {album.length} min.</p>
       </section>
 
       <section className={videoContainer}>
