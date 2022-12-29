@@ -285,7 +285,9 @@ input, select, textarea{
 .tracklisting-container {
     max-width: 1220px;
     margin: auto;
+    padding-top: 1rem;
     padding-bottom: 4rem;
+    /* border: solid green 1px; */
 }
 
 .tracklisting {
@@ -294,9 +296,11 @@ input, select, textarea{
     line-height: 1.7rem;
 }
 
+.tracklisting span,
 .tracklisting-container p {
     font-size: 12pt;
     font-weight: bold;
+    padding-right: 0.2rem;
 }
 
 .video-container {
