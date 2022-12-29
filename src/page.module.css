@@ -118,7 +118,7 @@
     font-family: 'Bebas Neue', cursive;
 }
 
-/* Index Page CSS: Contact form */
+/* Index Page CSS: Contact form and Socials */
 
 .contact-container {
     border:purple solid 1px;
@@ -136,7 +136,7 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 25pt;
     color: white;
-    margin: 2rem 4rem 3rem 4rem;
+    margin: 2rem 1rem 3rem 4rem;
     letter-spacing: 0.2rem;
 }
 
@@ -208,6 +208,47 @@ input, select, textarea{
 .form button:hover {
     background-color: white;
     color: black;
+}
+
+.tour-dates-info {
+    display: flex;
+    /* border: solid red 1px; */
+}
+
+.contact-container h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 19pt;
+    color: white;
+    margin: 2rem 1.7rem 3rem 4rem;
+    letter-spacing: 0.19rem;
+}
+
+.socials {
+    /* border: solid red 1px; */
+    display: flex;
+    margin-top: 2.1rem;
+    gap: 1rem;
+}
+
+.website,
+.instagram,
+.facebook {
+    background-size: 27px 27px;
+    border-radius: 50%;
+    height: 27px;
+    width: 27px;
+}
+
+.website {
+    background-image: url("./images/website.png");
+}
+
+.instagram {
+    background-image: url("./images/instagram.svg");
+}
+  
+.facebook {
+    background-image: url("./images/facebook.svg");
 }
 
 /* Albums Page CSS */

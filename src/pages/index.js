@@ -18,7 +18,12 @@ import {
   contactContainer,
   form,
   personalData,
-  message
+  message,
+  tourDatesInfo,
+  socials,
+  website,
+  instagram,
+  facebook
 } from "../page.module.css"
 
 const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
@@ -55,14 +60,14 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
       </section>
 
       <section className={highlightsContainer}>
-          <div className={highlightsTile}>
-            <h2 className={highlightsTitle}>Highlights</h2>
-          </div>
-          {homePageFields.featuredProducts.map(album => {
-            return (
-              <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
-            );
-          })}
+        <div className={highlightsTile}>
+          <h2 className={highlightsTitle}>Highlights</h2>
+        </div>
+        {homePageFields.featuredProducts.map(album => {
+          return (
+            <Album slug={`albums/${album.slug}`} key={album.id} album={album} />
+          );
+        })}
       </section>
 
       <section className={contactContainer}>
@@ -82,6 +87,32 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
             <button type="submit">Submit</button>
           </div>
         </form>
+        <div className={tourDatesInfo}>
+          <h3>More information on tour dates:</h3>
+          <div className={socials}>
+            <a
+              className={website}
+              target="__blank"
+              href={contactFields.website}
+            >
+              {""}
+            </a>
+            <a
+              className={instagram}
+              target="__blank"
+              href={contactFields.instagram}
+            >
+              {""}
+            </a>
+            <a
+              className={facebook}
+              target="__blank"
+              href={contactFields.facebook}
+            >
+              {""}
+            </a>
+          </div>
+        </div>
       </section>
     </Layout>
   )

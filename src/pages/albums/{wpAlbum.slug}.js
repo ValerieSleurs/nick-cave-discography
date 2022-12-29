@@ -48,7 +48,7 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
           }}
         />
         {album.length && (
-          <p>Album length: {album.length} min.</p>
+          <p>Total length: {album.length} min.</p>
         )}
       </section>
 
