@@ -1,6 +1,6 @@
 .nav-container {
     display: flex;
-    max-width: 85vw;
+    max-width: 1740px;
     margin: auto;
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -34,4 +34,15 @@
     color: inherit;
     text-decoration: none;
     font-size: 13pt;
+}
+
+.spotify-button { 
+    text-decoration: none;
+    border: solid 1px black;
+    border-radius: 50px;
+    color: rgb(42, 42, 42);    
+    margin-left: 1.5rem;
+    font-size: 13pt;
+    font-weight: bold;
+    padding: 8px 20px;
 }

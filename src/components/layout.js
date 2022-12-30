@@ -11,14 +11,19 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
         }
-      }      
+      } 
+      wpPage(slug: {eq: "home-page"}) {        
+        contactFields {
+          spotify   
+        }
+      }     
     }  
   `)
 
   return (
     <div className={container}>
       <title>{data.site.siteMetadata.title}</title>
-      <Header />
+      <Header spotifyLink={data.wpPage.contactFields} />
       <main>
         {children}
       </main>
