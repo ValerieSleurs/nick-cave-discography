@@ -1,13 +1,20 @@
 import * as React from "react"
 import {
-    footerContainer
+    footerContainer,
+    link
   } from "./footer.module.css"
 
-const Footer = () => {
+const Footer = ({ siteTitle }) => {
     return (
         <footer className={footerContainer}>
-            <p>Nick Cave and the Bad Seeds © {new Date().getFullYear()}</p>
-            <p>CMS Development | AP Hogeschool</p>
+            <p>{siteTitle} © {new Date().getFullYear()}</p>
+            <a
+              className={link}
+              target="__blank"
+              href="https://www.ap.be/graduaat/programmeren"
+            >
+              CMS Development - AP Hogeschool
+            </a>
         </footer>
     );
 }

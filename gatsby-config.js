@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Nick Cave and the Bad Seeds",
-    description: "An overview of the discography of Nick Cave and the Bad Seeds",
+    title: "The Discography of Nick Cave & the Bad Seeds",
+    description: "An overview of the career and albums of Nick Cave & the Bad Seeds",
     author: "Valerie Sleurs",
     siteUrl: "http://nick-cave-discography.local/",
   },

@@ -27,7 +27,7 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
             ))}
           </div>
           {album.artist && (
-            <p>Performed by {album.artist}</p>
+            <h4>Performed by {album.artist}</h4>
           )}
           <p>{album.albumType} released by {album.recordLabel}</p>
           <div

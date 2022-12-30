@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import Album from "../../components/album"
 import {
@@ -11,7 +10,6 @@ import {
 } from "../../page.module.css"
 
 const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields } } }) => {
-  const image = getImage(albumsPageFields.picture.localFile)
 
   return (
     <Layout pageTitle="Albums of Nick Cave and the Bad Seeds">

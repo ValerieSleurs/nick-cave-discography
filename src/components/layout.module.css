@@ -3,16 +3,16 @@ html {
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
     overflow-y: scroll;
-    background-color: rgb(255, 253, 250);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     overflow: hidden;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-kerning: normal;
 }
 
 .container {
+    background-color: rgb(255, 253, 250);
 }

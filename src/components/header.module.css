@@ -1,9 +1,8 @@
 .nav-container {
     display: flex;
     max-width: 85vw;
-    border: red solid 1px;
     margin: auto;
-    padding-top: 2rem;
+    padding-top: 3rem;
     padding-bottom: 2rem;
     font-family: sans-serif;
 }

@@ -4,14 +4,14 @@ import { container } from './layout.module.css'
 import Header from "../components/header"
 import Footer from "../components/footer"
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query  {
       site {
         siteMetadata {
           title
         }
-      }
+      }      
     }  
   `)
 
@@ -22,7 +22,7 @@ const Layout = ({ pageTitle, children }) => {
       <main>
         {children}
       </main>
-      <Footer />
+      <Footer siteTitle={data.site.siteMetadata.title} />
     </div>
   )
 }

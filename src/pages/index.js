@@ -88,7 +88,7 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
           </div>
         </form>
         <div className={tourDatesInfo}>
-          <h3>More information on tour dates:</h3>
+          <h3>News and upcoming tour dates:</h3>
           <div className={socials}>
             <a
               className={website}
@@ -170,8 +170,7 @@ export const query = graphql`
         contactTitle
         website
         instagram
-        facebook
-        youtube       
+        facebook     
       }
     }
   }
