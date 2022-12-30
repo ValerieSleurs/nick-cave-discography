@@ -22,7 +22,6 @@ const AlbumsPage = ({ data: { allWpAlbum: { edges }, wpPage: { albumsPageFields 
           }}
         />
       </section>
-
       <section className={albumsContainer}>
         <div className={albumTile}>
           {edges.map(({ node: album }) => {

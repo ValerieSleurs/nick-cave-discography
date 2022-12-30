@@ -3,13 +3,14 @@
 .header-container {
     max-width: 1740px;  
     margin: auto;
+    position: relative;
+    text-align: center;
 }
 
 .header-title {
     width: 60%;
     max-width: 750px;
     position: absolute;
-    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -116,7 +117,7 @@
     font-family: 'Bebas Neue', cursive;
 }
 
-/* Index Page CSS: Contact form and Socials */
+/* Index Page CSS: Contact form - Socials */
 
 .contact-container {
     width: 100%;

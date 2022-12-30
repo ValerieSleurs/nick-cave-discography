@@ -38,7 +38,6 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
         </article>
         <GatsbyImage className={albumCover} image={image} alt={album.albumCover.altText} />
       </section>
-
       <section className={tracklistingContainer}>
         <h3>Tracklisting</h3>
         <div
@@ -51,7 +50,6 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
           <p>Total length: {album.length} min.</p>
         )}
       </section>
-
       <section className={videoContainer}>
         <h2>Discover {album.videoTitle}</h2>
         <iframe className={iframe} src={album.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>

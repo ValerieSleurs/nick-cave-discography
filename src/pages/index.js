@@ -36,7 +36,6 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
         <GatsbyImage className={headerPicture} image={heroImage} alt={homePageFields.picture.altText} />
         <h2 className={headerTitle}>{homePageFields.title}</h2>
       </section>
-
       <section className={bioContainer}>
         <div className={bioTitles}>
           <h2>{homePageFields.bioTitle}</h2>
@@ -58,7 +57,6 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
           </a>
         </div>
       </section>
-
       <section className={highlightsContainer}>
         <div className={highlightsTile}>
           <h2 className={highlightsTitle}>Highlights</h2>
@@ -69,7 +67,6 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
           );
         })}
       </section>
-
       <section className={contactContainer}>
         {contactFields.contactTitle && <h2>{contactFields.contactTitle}</h2>}
         <form className={form} name="contact" method="POST" data-netlify="true">

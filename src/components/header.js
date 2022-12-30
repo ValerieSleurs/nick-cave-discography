@@ -9,7 +9,6 @@ import {
   spotifyButton
 } from "./header.module.css"
 
-
 const Header = ({ spotifyLink }) => {
   return (
     <nav className={navContainer}>
