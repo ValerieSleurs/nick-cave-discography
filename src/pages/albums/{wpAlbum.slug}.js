@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import {
-  infoContainer,
+  infoContainerTemplate,
   infoText,
   taxonomy,
   albumCover,
@@ -18,7 +18,7 @@ const AlbumPage = ({ data: { wpAlbum: { albumMeta: album, producers: { nodes: pr
 
   return (
     <Layout pageTitle="Album Details">
-      <section className={infoContainer}>
+      <section className={infoContainerTemplate}>
         <article className={infoText}>
           <h3>{album.albumTitle} ({album.releaseYear})</h3>
           <div className={taxonomy}>Produced by

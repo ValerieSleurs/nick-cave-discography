@@ -291,11 +291,19 @@ input, select, textarea{
 
 /* Album Template Page CSS */
 
+.info-container-template {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1220px;
+    margin: auto;
+    padding: 8rem 0 2rem 0;
+}
+
 .info-text {
     font-size: 13pt;
     line-height: 1.7rem;
     margin-right: 140px;
-    width: 730px;
+    max-width: 730px;
 }
 
 .info-text h3,
@@ -329,7 +337,7 @@ input, select, textarea{
 }
 
 .tracklisting {
-    width: 1180px;
+    max-width: 1180px;
     font-size: 14pt;
     line-height: 1.7rem;
 }
