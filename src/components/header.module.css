@@ -1,4 +1,5 @@
 .nav-container {
+    width: 85vw;
     display: flex;
     max-width: 1740px;
     margin: auto;

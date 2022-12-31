@@ -1,6 +1,7 @@
 /* Index Page CSS */
 
 .header-container {
+    width: 85vw;
     max-width: 1740px;  
     margin: auto;
     position: relative;

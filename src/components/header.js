@@ -23,7 +23,7 @@ const Header = ({ spotifyLink }) => {
         <li>
           <a
             className={spotifyButton}
-            href={spotifyLink.spotify}
+            href={spotifyLink?.spotify}
             target="_blank"
             rel="noreferrer"
           >

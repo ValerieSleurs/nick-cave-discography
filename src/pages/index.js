@@ -52,8 +52,8 @@ const IndexPage = ({ data: { wpPage: { homePageFields, contactFields } } }) => {
               __html: homePageFields.description,
             }}
           />
-          <a className={button} href={homePageFields.callToAction.url}>
-            {homePageFields.callToAction.title}
+          <a className={button} href={homePageFields.callToAction?.url}>
+            {homePageFields.callToAction?.title}
           </a>
         </div>
       </section>
